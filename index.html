@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa Comunitária Entre Amigos e Crianças</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FFA07A 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2{
+          color:greenyellow
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+        }
+        
+        .btn-primary {
+            background-color: #FFD700;
+            color: #333;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Seção Sobre */
+        .sobre {
+            padding: 80px 20px;
+            background-color: #FFF9E6;
+            text-align: center;
+        }
+        
+        .sobre h2 {
+            color: #FF6B9D;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .sobre p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        /* Cards de Doação */
+        .como-ajudar {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .como-ajudar h2 {
+            text-align: center;
+            color: #4EC3E0;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #FFE66D 0%, #FFA500 100%);
+            border-radius: 20px;
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card:nth-child(2) {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF1493 100%);
+            color: white;
+        }
+        
+        .card:nth-child(3) {
+            background: linear-gradient(135deg, #4EC3E0 0%, #1E90FF 100%);
+            color: white;
+        }
+        
+        .card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .card p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-card {
+            background-color: white;
+            color: #333;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-card:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Meta e Contador */
+        .meta-contador {
+            padding: 80px 20px;
+            background-color: #E8F5E9;
+            text-align: center;
+        }
+        
+        .meta-contador h2 {
+            color: #2E7D32;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 40px;
+            background-color: #C8E6C9;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .countdown {
+            font-size: 2rem;
+            color: #FF6B9D;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .countdown-boxes {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .countdown-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .countdown-box span {
+            display: block;
+            font-size: 3rem;
+            color: #FF6B9D;
+        }
+        
+        .countdown-box p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .social-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp { background-color: #25D366; color: white; }
+        .instagram { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); color: white; }
+        .facebook { background-color: #1877F2; color: white; }
+        
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        footer p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .btn-primary { font-size: 1.2rem; padding: 15px 30px; }
+            .cards-container { flex-direction: column; align-items: center; }
+            .countdown-boxes { flex-direction: column; align-items: center; }
+        }
+        #textoParaCopiar{
+          display: none; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>PROJETO ENTRE AMIGOS E CRIANÇAS</h1>
+        <h2>🎉 Há Mais de 2 Décadas Espalhando Sorrisos no Dia das Crianças 💖</h2>
+        <br>
+        <p>Ajude a realizar sonhos de dezenas de crianças da nossa comunidade</p>
+        <button class="btn-primary" onclick="scrollToDonation()">Quero Doar Agora</button>
+    </section>
+
+    <!-- Sobre o Evento -->
+    <section class="sobre">
+        <h2>Uma Tradição de Amor</h2>
+        <h3>O projeto Entre Amigos e Crianças realiza há 24
+anos uma festinha no Dia das Crianças, sempre
+com o propósito de proporcionar lazer e alegria aos
+
+pequenos nesse dia tão especial.</h3>
+
+        <!-- Espaço para galeria de fotos -->
+    </section>
+
+    <!-- Como Ajudar -->
+    <section class="como-ajudar" id="doacao">
+        <h2>Como Você Pode Ajudar</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>💰</h3>
+                <p>Doe em Dinheiro</p>
+                <p>Pix</p>
+                <span id="textoParaCopiar">82912114349</span>
+                <button onclick="pix()" class="btn-card">Doar Agora</button>
+            </div>
+            <div class="card">
+                <h3>🎁</h3>
+                <p>Doe Brinquedos</p>
+                <p>Novos ou Usados</p>
+                <button onclick="zap('doar brinquedos')" t="Test" class="btn-card">Doar brinquedos</button>
+            </div>
+            <div class="card">
+                <h3>🍿</h3>
+                <p>Doe Alimentos</p>
+                <p>Pipoca, bombons, etc</p>
+                <button onclick="zap('doar alimentos')" class="btn-card">Doar alimentos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meta e Contador -->
+    <section class="meta-contador">
+        <div class="countdown">
+            ⏰ Faltam apenas:
+            <div class="countdown-boxes">
+                <div class="countdown-box">
+                    <span id="days">0</span>
+                    <p>Dias</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours">0</span>
+                    <p>Horas</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes">0</span>
+                    <p>Minutos</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">0</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Rodapé -->
+    <footer>
+        <h3>Obrigado por Fazer Parte!</h3>
+        <p>Cada doação é um abraço para uma criança! 🤗</p>
+        <p>Responsável: Fátima Tibiriça</p>
+        <p>Localização: Rua Ada Pimentel, 1190 - Jangurussú</p>
+        <p>📞 WhatsApp: (85) 99625-3967</p>
+    </footer>
+
+    <script>
+        // Contador regressivo
+        function updateCountdown() {
+            const eventDate = new Date('2025-10-11T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Scroll suave para seção de doação
+        function scrollToDonation() {
+            document.getElementById('doacao').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copiarTexto() {
+  const texto = document.getElementById("textoParaCopiar").innerText;
+  navigator.clipboard.writeText(texto)
+    .then(() => alert("Chave copiada!"))
+    .catch(() => alert("Erro ao copiar chave"));
+}
+function pix(){
+  window.open("https://nubank.com.br/cobrar/1654qz/66cd020f-db55-4b06-a885-1fe625da51b0")
+}
+
+        function zap(tipo){
+          const s = "Olá! Quero ";
+          window.open(`https://wa.me/5585996253967?text=${s}${tipo}`)
+        }
+    </script>
+</body>
+</html>
